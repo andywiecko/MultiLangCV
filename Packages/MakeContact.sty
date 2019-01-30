@@ -1,0 +1,65 @@
+\makeatletter
+
+% counter which counts nonzero fields in contact information
+\newcounter{imageRows}
+\stepcounter{imageRows}
+
+\def\makecontactFieldsWidth{0.6}
+\def\makecontactImageFieldWidth{0.4}
+\def\makecontact{
+\noindent
+\begin{minipage}[c]{\makecontactFieldsWidth\textwidth}
+\vspace{0.25\baselineskip}
+    \fillcontact
+\end{minipage}
+\begin{minipage}[c]{\makecontactImageFieldWidth\textwidth}
+\centering \ifnotemptyimage{\@image}
+\end{minipage}
+}
+
+\def\name{Name}
+\def\icon{Icon}
+\def\ifnotemptyfield#1{%
+\setbox0=\hbox{\csname @#1\endcsname\unskip}\ifdim\wd0=0pt
+    \else%
+        \stepcounter{imageRows}
+        \contactRow{\csname #1\icon\endcsname}{\sf \csname #1\name\endcsname:}{\csname @#1\endcsname}
+    \fi%
+}
+
+\def\ifnotemptyhref#1#2{%
+    \ifx\csname @#1\endcsname\@empty%
+    \else%
+        \stepcounter{imageRows}
+            \contactRow{\csname #1\icon\endcsname}{\sf \csname #1\name\endcsname:}{\href{#2\csname @#1\endcsname}{\csname @#1\endcsname}}% \\
+    \fi%
+}
+
+\def\contactRowIconWidth{0.08}
+\def\contactRowFieldNameWidth{0.42}
+\def\contactRowFieldMatterWidth{0.5}
+
+\def\contactRow#1#2#3{
+\begin{tabular}{@{}p{\contactRowIconWidth\textwidth}@{}p{\contactRowFieldNameWidth\textwidth}@{}p{\contactRowFieldMatterWidth\textwidth}@{}}
+\centering #1  & #2 &\raggedleft #3 
+ \end{tabular}\\
+}
+
+
+\def\ifnotemptyimage#1{%
+    \ifx#1\@empty%
+        \null%
+    \else%
+        \includegraphics[height=\@imageheight\baselineskip]{#1}
+    \fi%
+}
+
+\def\ifnotemptyplace#1{%
+    \ifx#1\@empty%
+        %\null%
+    \else%
+#1, % 
+    \fi%
+}
+
+\makeatother

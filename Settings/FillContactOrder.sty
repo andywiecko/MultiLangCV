@@ -1,0 +1,10 @@
+\def\fillcontact{%
+    \ifnotemptyfield{author}
+    \ifnotemptyhref{phone}{tel:}
+    \ifnotemptyhref{email}{mailto:}
+    \ifnotemptyfield{address}
+    \ifnotemptyhref{www}{https://}
+    \ifnotemptyfield{placeofbirth}
+    \ifnotemptyfield{dateofbirth}
+    \ifnotemptyfield{status}
+}

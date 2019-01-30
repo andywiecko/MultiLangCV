@@ -1,0 +1,26 @@
+\makeatletter
+
+% pagination
+\newcommand\oddhead[1]{\gdef\@oddhead{\reset@font#1}}
+\newcommand\evenhead[1]{\gdef\@evenhead{\reset@font#1}}
+\newcommand\oddfoot[1]{\gdef\@oddfoot{\reset@font#1}}
+\newcommand\evenfoot[1]{\gdef\@evenfoot{\reset@font#1}}
+
+% name   CV    date
+% CV centering
+% name to left, date to right
+\def\threethings#1#2#3{
+\begin{tabular}{@{}p{0.45\textwidth}@{}p{0.1\textwidth}@{}p{0.45\textwidth}@{}}
+ \raggedright  #1 & \centering #2 & \raggedleft #3 
+\end{tabular}
+}
+
+\oddhead{\ifnum \thepage=1 \threethings{\LARGE \bfseries\sffamily \@titleauthor}{\Huge  \sffamily\@title}{\itshape\ifnotemptyplace{\@place}\@date}\fi}
+%\evenhead{\threethings{\Large \bfseries \@titleauthor}{\Huge  \@title}{\itshape\ifnotemptyplace{\@place}\@date}}
+
+
+\oddfoot{\scriptsize\begin{tabular}{p{\textwidth}}\@footer\end{tabular}}
+\evenfoot{\scriptsize\begin{tabular}{p{\textwidth}}\@footer\end{tabular}}
+
+
+\makeatother

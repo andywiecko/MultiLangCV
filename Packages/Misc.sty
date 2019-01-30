@@ -1,0 +1,21 @@
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage[babel]{csquotes}
+
+
+\usepackage{amsmath}
+% predefined enviroments with topsep=0 adn noitemsep
+\newenvironment{Itemize}
+{\begin{itemize}[noitemsep,topsep=0pt,label=\faCaretRight]}
+  {\end{itemize}}
+
+\newenvironment{Enumerate}
+{\begin{enumerate}[noitemsep,topsep=0pt]}
+  {\end{enumerate}}
+
+\newenvironment{Description}
+{\begin{description}[noitemsep,topsep=0pt]}
+{\end{description}}

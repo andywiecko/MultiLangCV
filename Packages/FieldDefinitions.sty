@@ -1,0 +1,24 @@
+
+
+% some definitions
+\makeatletter
+
+\def\DefineField#1{%
+    \expandafter\edef\csname #1\endcsname##1{%
+        \gdef\csname @#1\endcsname{##1}%
+    }%
+    \csname #1\endcsname{}
+}
+
+
+\newcommand\DefineSection[1]{
+\expandafter\newcommand\csname #1\endcsname{
+\Icon{\csname #1\icon\endcsname}
+\Section{\csname #1\name\endcsname}}
+    \expandafter\def\csname #1\name\endcsname{#1}
+    \expandafter\def\csname #1\icon\endcsname{}
+}
+%
+
+
+\makeatother

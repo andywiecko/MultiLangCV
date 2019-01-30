@@ -1,0 +1,10 @@
+\def\timeitemMatterWidth{0.8}
+\def\timeitemTimeWidth{0.2}
+
+\newcommand{\timeitem}[3][]{
+\noindent
+\begin{tabular}{@{}p{\timeitemMatterWidth\textwidth}@{}p{\timeitemTimeWidth\textwidth}@{}}
+\raggedright {\bfseries  #2}\\ #1  & \raggedleft #3 
+ \end{tabular}\\[1ex]
+
+}

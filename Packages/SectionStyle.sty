@@ -1,0 +1,35 @@
+\makeatletter
+
+\def\@Sect#1#2#3#4#5#6[#7]#8{\ifnum #2>\c@secnumdepth \let \@svsec \@empty \else \refstepcounter {#1}\protected@edef \@svsec {\@seccntformat {#1}\relax }\fi \@tempskipa #5\relax \ifdim \@tempskipa >\z@ \begingroup #6{\@hangfrom {\hskip #3\relax \@svsec }\interlinepenalty \@M #8 \Vhrulefill\@@par }\endgroup \csname #1mark\endcsname {#7}
+\addcontentsline {toc}{#1}{\ifnum #2>\c@secnumdepth \else \protect \numberline 
+{\csname the#1\endcsname }\fi #7}\else \def \@svsechd {#6{\hskip #3\relax \@svsec #8}\csname #1mark\endcsname {#7}\addcontentsline {toc}{#1}{\ifnum #2>\c@secnumdepth \else \protect \numberline {\csname the#1\endcsname }\fi #7}}\fi \@xsect {#5}}
+
+\def\@startSection#1#2#3#4#5#6{\if@noskipsec \leavevmode \fi \par \@tempskipa #4\relax \@afterindenttrue \ifdim \@tempskipa <\z@ \@tempskipa -\@tempskipa \@afterindentfalse \fi \if@nobreak \everypar {}\else \addpenalty \@secpenalty \addvspace \@tempskipa
+ \fi \@ifstar {\@ssect {#3}{#4}{#5}{#6}}{\@dblarg {\@Sect {#1}{#2}{#3}{#4}{#5}{#6}}}}
+
+\def\Section{\@startSection {section}{1}{\z@ }%
+    {2ex}%
+    {2.3ex \@plus .2ex}%
+    {\normalfont \Large \sffamily}%
+}
+
+\def\Vhrulefill{\leavevmode\leaders\hrule height .7ex depth \dimexpr 0.4pt-0.7ex \hfill \kern0pt}
+
+%\def\secbox#1{\makebox[0pt][r]{\fcolorbox{blue!60!black}{blue!60!black}{\color{white} #1}}}
+%\def\Icon#1{\def\@seccntformat##1{\secbox{#1}\,}}
+%\def\Icon#1{\def\@seccntformat##1{\llap{\colorbox{black}{\makebox[1.3em][c]{\textcolor{white}{#1}}}\hspace{0.5em}}}}
+\def\Icon#1{\def\@seccntformat##1{\llap{{\makebox[1.5em][c]{{#1}}\hspace{0.5em}}}}}
+
+
+
+\def\section{\@startsection{section}{1}{\z@}%
+                                   {2ex}%-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont \Large \sffamily}}
+                                   
+\def\subsection{\@startsection{subsection}{2}{\z@}%
+                                   {1ex}%-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {-2.3ex \@plus.2ex}%
+                                   {\normalfont \normalsize \sffamily}}
+                                   
+\makeatother                                   
