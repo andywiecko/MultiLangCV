@@ -92,7 +92,42 @@ consider new field `memberships`:
 ```
 
 ###### Defining own fields
-TODO
+Main idea behind `fields` is similar to `\author` or `\title` fields in standard *LaTeX* class
+User can insert some text into `\author{ <name of the author> }` and then user can refer to it using `\@author` macro.
+This is the way, in what `\DefineField` works, additionaly creating some icon macro.
+**Example**:
+Let's create `github` field.
+```
+\DefineField{github}
+\def\githubName{GitHub}
+\def\githubIcon{\faGithub}
+```
+Now user is able to fill this field:
+```
+\github{ <my github> }
+```
+To obtain the content of `github` field just refer to it with `@`:
+```
+\@github
+```
+There are to ways to add this field into `\makecontact` list.
+One: treating field as general field `\ifnotemptyfield{github}` or one can specify it to `href` field by `\ifnotemptyhref{github}{https://}`.
+Href version has additional  `prefix` argument for hyperlink (like `tel:`, `http:`, for more see [Uniform Resoure Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)).
+To add this field to contact one have to specify the order of the fields in `Settings/FillContactOrder.sty`:
+```
+\def\fillcontact{%
+    \ifnotemptyfield{author}
+    \ifnotemptyhref{phone}{tel:}
+    \ifnotemptyhref{email}{mailto:}
+    \ifnotemptyfield{address}
+    \ifnotemptyhref{www}{https://}
+    \ifnotemptyhref{github}{https://}
+    \ifnotemptyfield{placeofbirth}
+    \ifnotemptyfield{dateofbirth}
+    \ifnotemptyfield{status}
+}
+
+```
 
 ### How to add other language?
 In this example consider `german` language.
