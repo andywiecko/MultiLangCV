@@ -110,10 +110,10 @@ To obtain the content of `github` field just refer to it with `@`:
 ```
 \@github
 ```
-There are to ways to add this field into `\makecontact` list.
-One: treating field as general field `\ifnotemptyfield{github}` or one can specify it to `href` field by `\ifnotemptyhref{github}{https://}`.
+There are two ways to add this field into `\makecontact` list.
+One: treating field as general field `\ifnotemptyfield{github}` or one can specify it with `href` field using: `\ifnotemptyhref{github}{https://}`.
 Href version has additional  `prefix` argument for hyperlink (like `tel:`, `http:`, for more see [Uniform Resoure Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)).
-To add this field to contact one have to specify the order of the fields in `Settings/FillContactOrder.sty`:
+To add this field to contact section, one have to specify the order of the fields in `Settings/FillContactOrder.sty`:
 ```
 \def\fillcontact{%
     \ifnotemptyfield{author}
