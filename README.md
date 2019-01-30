@@ -38,12 +38,12 @@ To change language to polish just change english into polish:
 Provided class contains pre-defined sections (e.g. `\publications`) and fields (e.g. `\phone{}`) with coresponding icons.
 
 ###### Personal data section
-Personal data section includes many pre-defined field, which user can easly disable. 
+Personal data section includes many pre-defined fields, which user can easly disable. 
 When you do not want to print your phone number, just set empty field by: `\phone{}` (by default all contact informations are present in `Matter/contact.tex`).
 To change the order of fields in `Personal Data` section just go to `Settings/FillContactOrder.sty`.
 
 ###### Default sections
-There are several different pre-defined sections, which can be set by `\sectionname` for example `\publications`.
+There are several different pre-defined sections, which can be set by `\<sectionname>` for example `\publications`.
 To change section name in selected language go to: `Setting/LANG/...` and just edit the `\def\<sectionname>Name{Section Name}` macro.
 
 ###### CV item
@@ -60,7 +60,7 @@ To override this add aditional argument to `\image[ <height in number of rows> ]
 
 ###### Quotations
 Quotation markings are different in many languages. 
-By default this class load `csquotes` packages with babel option.
+By default this class load `csquotes` packages with `babel` option.
 This package contain some pre-defined behaviours for selected languages with expection of polish language.
 However in `Setting/LANG/polish.sty` there is included implementation of proper quotation for polish language.
 To use quotation marking use the following command: `enquote{ <Something to quote> }`.
@@ -79,7 +79,7 @@ Sounds complicated, but this is a very elegant way to define you own fields and 
 To define new section in CV use `\DefineSection{ <section> }`.
 This command will create:
 1. macro `\<section>`, which is responsible for section placement;
-2. macro `\<section>Icon`, which is responsible for selecting section icon. To change Icon just type `\<section>Icon{ <my new section icon> }`;
+2. macro `\<section>Icon`, which is responsible for selecting section icon. To change Icon just type `\def\<section>Icon{ <my new section icon> }`;
 3. macro `\<section>Name`, which is responsible for section name output (see `Setting/LANG/...`).
 If you didn't specify `\<section>Icon` or `\<section>Name`, no icon will be assigned to section and name will be the same as section `variable'. 
 **Example**:
@@ -92,7 +92,7 @@ consider new field `memberships`:
 ```
 
 ###### Defining own fields
-Main idea behind `fields` is similar to `\author` or `\title` fields in standard *LaTeX* class
+Main idea behind `fields` is similar to `\author` or `\title` fields in standard *LaTeX* classes.
 User can insert some text into `\author{ <name of the author> }` and then user can refer to it using `\@author` macro.
 This is the way, in what `\DefineField` works, additionaly creating some icon macro.
 **Example**:
@@ -130,7 +130,7 @@ To add this field to contact section, one have to specify the order of the field
 ```
 
 ### How to add other language?
-In this example consider `german` language.
+In this example let's consider `german` language.
 First, copy one of the file from `Setting/LANG/` directory and edit it to fullfill other language vocabulary.
 Create `Setting/LANG/german.sty`.
 Second, append `CV.cls` file: 
