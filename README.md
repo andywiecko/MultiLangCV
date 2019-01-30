@@ -42,22 +42,45 @@ To change the order of fields in `Personal Data` section just go to `Settings/Fi
 
 ###### Default sections
 There are several different pre-defined sections, which can be set by `\sectionname` for example `\publications`.
+To change section name in selected language go to: `Setting/LANG/...` and just edit the `\def\<sectionname>Name{Section Name}` macro.
 
 ###### CV item
 In most CV documents one should show experience, education and etc.  over the years.
 This CV class provide `\timeitem[ <Details> ]{ <What?> }{ <When?> }` macro, which take care of some your history record.
 Example:
-\time[Project leader]{Programer @ Studio 1}{2018-2020}
-Output
+`\time[Middle-earth studies, bachelor studies, thesis: \textit{History of Hobbits}]{University of Shire}{2013 -- 2015}`
+Output:
+[![timeitem](https://raw.githubusercontent.com/andywiecko/MultiLangCV/master/examples/timeitem.png)](https://raw.githubusercontent.com/andywiecko/MultiLangCV/master/examples/timeitem.png)
 
+###### Image
+By default image height is controlled by number of non-zero fields in `\personaldata` section.
+To override this add aditional argument to `\image[ <height in number of rows> ]{ <image file> }`.
+
+###### Quotations
+TODO
 
 ###### Some dimensions
 To modify width of corresponding fields, `timeitem`s go to `Settings/WidthSettings.sty`
 
-### Supported Languages
+
+### How to define own sections/fields?
+
+There are defined some macro definitions, which can produce other macro, which produce the other macro.
+Sounds complicated, but this is a very elegant way to define you own fields and sections.
+
+
+###### Defining own section
+TODO
+
+###### Defining own fields
+TODO
+
+### How to add other language?
+TODO
+
+### Supported languages
 (Feel free to append this list)
 * polish
 * english
-
 
 
