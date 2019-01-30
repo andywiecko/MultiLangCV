@@ -1,11 +1,32 @@
 # MultiLangCV
 Multi language LaTeX CV template: use single command to swap between languages.
 
+- [Preview](#preview)
+- [Purpose of this pack](#purpose-of-this-pack)
+- [Pack stucture](#pack-stucture)
+- [How to use it?](#how-to-use-it)
+	- [Swaping between languages](#swaping-between-languages)
+	- [Default sections, fields and other settings](#default-sections-fields-and-other-settings)
+		- [Personal data section](#personal-data-section)
+		- [Default sections](#default-sections)
+		- [CV item](#cv-item)
+		- [Image](#image)
+		- [Quotations](#quotations)
+		- [Some dimensions](#some-dimensions)
+- [How to define own sections/fields?](#how-to-define-own-sectionsfields)
+	- [Defining own section](#defining-own-section)
+	- [Defining own fields](#defining-own-fields)
+- [How to add other language?](#how-to-add-other-language)
+- [Supported languages](#supported-languages)
+
 ### Preview
 
 | English | Polish |
 |:---:|:---:|
 | [![CV-english](https://raw.githubusercontent.com/andywiecko/MultiLangCV/master/examples/CV-english.png)](https://raw.githubusercontent.com/andywiecko/MultiLangCV/master/examples/CV-english.pdf)  | [![CV-polish](https://raw.githubusercontent.com/andywiecko/MultiLangCV/master/examples/CV-polish.png)](https://raw.githubusercontent.com/andywiecko/MultiLangCV/master/examples/CV-polish.pdf) |
+
+
+
 
 ### Purpose of this pack
 
