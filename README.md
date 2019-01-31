@@ -179,5 +179,5 @@ Now you are able to toggle between different languages everywhere in the documen
 (Feel free to append this list)
 * polish
 * english
-
+* russian
 
