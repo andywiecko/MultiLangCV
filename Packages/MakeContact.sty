@@ -28,7 +28,7 @@
 }
 
 \def\ifnotemptyhref#1#2{%
-    \ifx\csname @#1\endcsname\@empty%
+\setbox0=\hbox{\csname @#1\endcsname\unskip}\ifdim\wd0=0pt
     \else%
         \stepcounter{imageRows}
             \contactRow{\csname #1\icon\endcsname}{\sf \csname #1\name\endcsname:}{\href{#2\csname @#1\endcsname}{\csname @#1\endcsname}}% \\
