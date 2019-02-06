@@ -84,7 +84,7 @@ Quotation markings are different in many languages.
 By default this class load `csquotes` packages with `babel` option.
 This package contain some pre-defined behaviours for selected languages with expection of polish language.
 However in `Setting/LANG/polish.sty` there is included implementation of proper quotation for polish language.
-To use quotation marking use the following command: `enquote{ <Something to quote> }`.
+To use quotation marking use the following command: `\enquote{ <Something to quote> }`.
 
 ###### Some dimensions
 To modify width of corresponding fields, `timeitem`s go to `Settings/WidthSettings.sty`
