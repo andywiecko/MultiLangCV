@@ -180,4 +180,5 @@ Now you are able to toggle between different languages everywhere in the documen
 * polish
 * english
 * russian
+* spanish
 
