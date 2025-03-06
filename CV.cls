@@ -17,6 +17,9 @@
 \DeclareOption{spanish}{
 \PassOptionsToPackage{\CurrentOption}{babel}
 }
+\DeclareOption{catalan}{
+\PassOptionsToPackage{\CurrentOption}{babel}
+}
 
 
 %% Process given options
@@ -48,6 +51,7 @@
 \@LANG{english}
 \@LANG{russian}
 \@LANG{spanish}
+\@LANG{catalan}
 \makeatother
 
 % languages macros
@@ -55,3 +59,4 @@
 \def\ENG#1{\iflanguage{english}{#1}{}}
 \def\RUS#1{\iflanguage{russian}{#1}{}}
 \def\SP#1{\iflanguage{spanish}{#1}{}}
+\def\CAT#1{\iflanguage{catalan}{#1}{}}
