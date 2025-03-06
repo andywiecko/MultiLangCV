@@ -181,4 +181,5 @@ Now you are able to toggle between different languages everywhere in the documen
 * english
 * russian
 * spanish
+* catalan
 
